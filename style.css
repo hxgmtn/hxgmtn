@@ -1,1 +1,77 @@
-test
+/* Global Variables */
+:root {
+    --bgColor: #000000; /* Solid black background */
+    --accentColor: #ffffff; /* White for contrast */
+    --font: 'Karla', sans-serif; /* Clean, minimal font */
+    --delay: .3s; /* Transition delay for animations */
+}
+
+/* Base body styling */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: var(--font);
+    background-color: var(--bgColor); /* Solid black background */
+    color: var(--accentColor); /* White text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: 1s ease-out var(--delay) 1 transitionAnimation;
+    animation-fill-mode: forwards;
+}
+
+/* Username styling */
+#userName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Links container styling */
+#links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between links */
+}
+
+/* Individual link styling */
+.link {
+    color: var(--accentColor);
+    font-size: 1.2rem;
+    text-decoration: none;
+    border: 2px solid var(--accentColor);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link:hover {
+    background-color: var(--accentColor); /* White background on hover */
+    color: var(--bgColor); /* Black text on hover */
+}
+
+/* Hashtag / footer section styling */
+#hashtag {
+    margin-top: 30px;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--accentColor);
+}
+
+/* Smooth fade-in effect for page load */
+@keyframes transitionAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
